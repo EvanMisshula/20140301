@@ -106,7 +106,7 @@ d3.select("div").attr("mos");
 
 // Reset Browser
 
-d3.selectAll("div").attr("holiday", function(){ return "inn"; });
+d3.selectAll("div").attr("holiday", function() { return "inn"; });
 </code></pre>
 <br />
 ## Slide 77: Using Data Bound To Dom Elements
@@ -116,7 +116,8 @@ d3.selectAll("div").attr("holiday", function(){ return "inn"; });
 d3.selectAll("span").attr("d_element", function(d) { return d; });
 
 // Reset Browser
-               d3.selectAll("unicorn").data([1,2,3]).enter().append("unicorn");
+
+d3.selectAll("unicorn").data([1,2,3]).enter().append("unicorn");
 
 d3.selectAll("unicorn").attr("unicorn_i", function(d, i) { return i; });
 </code></pre>
@@ -139,7 +140,8 @@ d3.select("body").selectAll("span").attr("span_d", function(d) { return d; });
 d3.select("body").selectAll("span").remove();
 
 // Reset Browser
-               d3.select("body").selectAll("unicorn").data([1,2,3]).enter().append("unicorn");
+
+d3.select("body").selectAll("unicorn").data([1,2,3]).enter().append("unicorn");
 
 d3.select("body").selectAll("unicorn").attr("unicorn_d", function(d) { return d; });
 
@@ -153,7 +155,8 @@ d3.select("body").selectAll("unicorn").remove();
 d3.select("svg").append("circle").attr("cx", 35).attr("cy", 35).attr("r", 25);
 
 // Reset Browser
-               d3.select("body").append("svg").attr("height",200).attr("width",200);
+
+d3.select("body").append("svg").attr("height",200).attr("width",200);
 
 d3.select("svg").append("rect").attr("x", 10).attr("y", 10).attr("height", 50).attr("width", 50);
 </code></pre>
@@ -312,7 +315,7 @@ d3.selectAll(".dot").on("mouseover", mouseOver);
     .style("opacity", 0);
 
 function mouseover(d) {
-    div.html("Sepal Width: " + d.sepalWidth + "<br /> Sepal Length: " + d.sepalLength)
+    div.html("Sepal Width: " + d.sepalWidth + "&lt;br /&gt; Sepal Length: " + d.sepalLength)
         .style("left", (d3.event.pageX + 9) + "px")
         .style("top", (d3.event.pageY - 43) + "px")
         .style("opacity", 1);
